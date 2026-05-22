@@ -1,6 +1,50 @@
 # Rust 知识文章项目
 
-这个仓库用于系统整理 Rust 语言学习材料。当前已经完成 10 篇 Rust 基础知识介绍文档，以及 10 篇深入研究 Rust 语言机制的文章。
+这个仓库用于系统整理 Rust 语言学习材料，并提供一个可以编译运行的 Rust 学习项目。
+
+## Rust 适合写什么项目
+
+Rust 特别适合这些类型的项目：
+
+1. 命令行工具：启动快、部署简单、容易打包成单个二进制文件。
+2. 后端服务：性能好，内存安全，适合长期运行的网络程序。
+3. 系统工具：适合处理文件、进程、网络、压缩、编译器工具链等底层任务。
+4. WebAssembly：可以把性能敏感逻辑编译到浏览器或边缘环境。
+5. 嵌入式和基础设施：适合对资源控制、可靠性和并发安全要求高的场景。
+
+学习 Rust 时，不建议一开始就写大型异步服务或复杂图形项目。更好的路线是先写一个小而完整的 CLI 工具，因为它能覆盖所有权、结构体、枚举、错误处理、文件读写、测试和 Cargo 工作流。
+
+## 学习项目：rusty-tasks
+
+`rusty-tasks` 是一个本地任务清单 CLI。它不依赖外部 crate，数据保存在当前目录的 `.rusty-tasks.txt` 文件中，适合作为第一个完整 Rust 项目。
+
+它练习这些 Rust 知识点：
+
+- `struct` 和 `enum` 建模任务与过滤条件。
+- `Result`、`Option` 和 `?` 风格错误处理。
+- `Vec<T>`、迭代器和字符串处理。
+- 文件读写与简单持久化格式。
+- `match` 命令分发。
+- 单元/集成测试与 `cargo test`。
+
+运行示例：
+
+```bash
+cargo run -- add "learn ownership"
+cargo run -- add "write tests"
+cargo run -- list
+cargo run -- done 1
+cargo run -- list open
+cargo run -- list done
+cargo run -- clear
+```
+
+测试和格式化：
+
+```bash
+cargo fmt
+cargo test
+```
 
 ## 基础系列
 

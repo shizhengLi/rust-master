@@ -1,1 +1,7 @@
 .specstory
+
+
+# Added by cargo
+
+/target
+.rusty-tasks.txt
